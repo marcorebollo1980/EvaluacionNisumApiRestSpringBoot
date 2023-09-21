@@ -9,7 +9,6 @@ nombre de la base de datos:testdb
         usuario_id varchar(255),
         primary key (id)
     )
-Hibernate: 
     
     create table usuario (
         id varchar(255) not null,
