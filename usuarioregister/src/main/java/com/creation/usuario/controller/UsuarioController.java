@@ -29,7 +29,7 @@ import com.creation.usuario.util.ConstantUtils;
 
 
 @RestController
-@RequestMapping("/api/")
+@RequestMapping("/api")
 public class UsuarioController {
 	
 	@Autowired
@@ -45,6 +45,8 @@ public class UsuarioController {
 
 		return ResponseEntity.ok("Hello word users!!!!");
 	}
+	
+
 	   
     /***
      * Rest api para creacion de usuarios en base de datos

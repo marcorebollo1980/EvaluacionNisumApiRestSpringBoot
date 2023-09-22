@@ -2,22 +2,10 @@ package com.creation.usuario.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
-import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
-
-import static org.springframework.security.config.Customizer.withDefaults;
 
 
 
+/*
 @Configuration
 public class WebSecurityConfing {
      
@@ -43,7 +31,6 @@ public class WebSecurityConfing {
 	        InMemoryUserDetailsManager userDetailsManager = new InMemoryUserDetailsManager();
 
 	        // Creamos un UserDetails para el usuario "admin" con contraseña encriptada
-	        String encodedPassword = "$2a$10$YJHajwaTqNsgJBMwp5bym.SU21qrQoHMfb.NT.koHZ9uRru4Tu07u"; // Contraseña encriptada "admin123"
 	        UserDetails adminUser = User.builder()
 	                .username("admin")
 	                .password(passwordEncoder().encode("admin"))
@@ -74,4 +61,4 @@ public class WebSecurityConfing {
 	    }
 	    
 }
-	 
+*/ 
