@@ -37,3 +37,8 @@ PASOS:
 
 5. repositorio de git
    https://github.com/marcorebollo1980/EvaluacionNisumApiRestSpringBoot.git
+   
+   
+6. la contraseña para probar las apis es
+   user = admin
+   password = admin
