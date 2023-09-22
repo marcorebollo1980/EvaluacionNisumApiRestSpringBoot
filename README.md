@@ -33,3 +33,7 @@ PASOS:
 
 4. correr pruebas unitarias de la clase
    UserServiceTests
+
+
+5. repositorio de git
+   https://github.com/marcorebollo1980/EvaluacionNisumApiRestSpringBoot.git
