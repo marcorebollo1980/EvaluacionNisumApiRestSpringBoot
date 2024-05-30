@@ -12,17 +12,28 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreType;
+import com.fasterxml.jackson.annotation.JsonIncludeProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
 @Table(name="telefono")
+@JsonIgnoreType
 public class Telefono {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String number;
-	private String citycode;
-	private String contrycode;
+	@JsonProperty("number") // Nombre del atributo JSON
+    private String number;
+
+    @JsonProperty("citycode") // Nombre del atributo JSON
+    private String citycode;
+
+    @JsonProperty("contrycode") // Nombre del atributo JSON
+    private String contrycode;
 	
 
 	@ManyToOne

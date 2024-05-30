@@ -16,17 +16,29 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIgnoreType;
+import com.fasterxml.jackson.annotation.JsonIncludeProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
 @Table(name="usuario")
+@JsonIgnoreType
 public class Usuario {
    
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String name;
-	private String email;
-	private String password;
+	@JsonProperty("name") // Nombre del atributo JSON
+    private String name;
+
+    @JsonProperty("email") // Nombre del atributo JSON
+    private String email;
+
+    @JsonProperty("password") // Nombre del atributo JSON
+    private String password;
 	
 	
 	@Column(name="created")
@@ -46,6 +58,7 @@ public class Usuario {
 
 	@Column(name = "isactive")
 	private String isactive;
+	
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "usuario_id")
@@ -116,3 +129,8 @@ public class Usuario {
 	
 	
 }
+
+
+
+
+

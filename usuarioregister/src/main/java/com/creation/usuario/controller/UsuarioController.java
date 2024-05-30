@@ -11,14 +11,17 @@ import javax.persistence.Column;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
+import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.creation.usuario.entities.Telefono;
@@ -46,7 +49,35 @@ public class UsuarioController {
 		return ResponseEntity.ok("Hello word users!!!!");
 	}
 	
+	@GetMapping("/listaUsuarios")
+	public ResponseEntity<List<Usuario>> getAllUsuers() {
+        List<Usuario> usuarios = usarioRepository.findAll();  
+		return new ResponseEntity<List<Usuario>>(usuarios, HttpStatus.OK);
+	}
+	
+	
+	@GetMapping("/detailUser/{id}")
+    public ResponseEntity<Usuario> getById(@PathVariable("id") Long id){
+        Usuario usuario = usarioRepository.findById(id);
+        if (usuario != null) {
+	        return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
+	    } else {
+	        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+	    }
+    }
 
+	@GetMapping("/detailUser")
+	public ResponseEntity<Usuario> getUserById(@RequestParam("id") Long id) {
+	    Usuario usuario = usarioRepository.findById(id);
+	    if (usuario != null) {
+	        return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
+	    } else {
+	        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+	    }
+	}
+
+	
+	
 	   
     /***
      * Rest api para creacion de usuarios en base de datos
